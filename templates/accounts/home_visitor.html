@@ -1,0 +1,447 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block title %}Welcome | {% endblock %}
+
+
+
+
+{% block style %}
+<style>
+.jumbotron {
+	background-image: url("http://www.transparenttextures.com/patterns/batthern.png");
+	background-color: #005880;
+}
+
+.jumbotron h1, .lead-jumbtron {
+	color: #fff;
+}
+
+.jumbotron li {
+	color: #fff;
+}
+
+
+
+.panel {
+	margin-top: 20px;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    /*margin-top: 120px;*/
+  }
+}
+
+    body {
+	  /*min-height: 2000px;*/
+	}
+  .main-container {
+    min-height: 950px;
+  }
+  .footer {
+    background-color:#C5c5c5;
+    min-height: 50px;
+    padding: 20px 0px;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+
+
+</style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>HasPro - Creative Portfolio Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.ico' %}">
+    
+    <!-- CSS
+	============================================ -->
+   
+
+    
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/et-line.css' %}">
+    
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/plugins.css' %}">
+    
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    
+    <!-- Modernizer JS -->
+    <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+
+<!-- JS
+============================================ -->
+
+<!-- jQuery JS -->
+<script src="{% static 'assets/js/vendor/jquery-1.12.0.min.js' %}"></script>
+<!-- Popper JS -->
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<!-- Plugins JS -->
+<script src="{% static 'assets/js/plugins.js' %}"></script>
+<!-- Ajax Mail -->
+<script src="{% static 'assets/js/ajax-mail.js' %}"></script>
+<!-- Main JS -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+{% endblock %}
+
+<style>
+  .navbar-default {
+  margin-bottom: 0px;
+}
+
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.container-fluid .jumbotron {
+  border-radius: 0px;
+}
+
+
+	.navbar-static-top {
+	  margin-bottom: 19px;
+	}
+
+  .navbar-default {
+    background-color: #005880;
+    border-color: #256582;
+    background-image: url("http://www.transparenttextures.com/patterns/batthern.png");
+  }
+
+  .navbar-default .navbar-nav>li>a {
+  color: #C5C5C5;
+  }
+  .navbar-default .navbar-nav>li>a:hover {
+  color: #FFFFFF;
+  }
+  .navbar-default .navbar-brand {
+  color: #FFFFFF;
+  }
+  .navbar-default .navbar-brand:hover {
+  color: #256582;
+  }
+
+  .panel-jumbotron {
+    margin-top: 0px !important;
+  border-radius: 0px 4px 4px 4px;
+  min-height: 320px;
+  text-align: center;
+  }
+  .panel-jumbotron p {
+    font-size: 16px;
+  }
+
+  .nav-tabs-jumbotron {
+    border-bottom: 0px solid #ddd;
+  }
+
+  .nav-tabs-jumbotron>li>a {
+    color: #FFF;
+    background-color: #999;
+    border: 1px solid transparent;
+    border-bottom-width: 0;
+  }
+
+  .nav-tabs-jumbotron>li {
+
+  }
+  .nav-tab-item-jumbotron {
+    
+  }
+
+</style>
+
+
+
+
+{% block jumbotron %}
+<div class='container-fluid bg-dark-blue'>
+
+<div class="jumbotron bg-dark-blue">
+<div class='container bg-dark-blue'>
+<!--<div class='row'>-->
+
+<div class='col-sm-7'>
+
+<!--&lt;!&ndash; Hero Section Start &ndash;&gt;-->
+<!--    <div class="ht-hero-section-two section bg-dark-blue" style="background-image: url('{% static 'assets/images/pro-hero-shape-2.png' %}');">-->
+<!--        <div class="container">-->
+
+<!--            <div class="row">-->
+                
+                <!-- Hero Content Start -->
+                <div class="ht-hero-content-three text-center col-12">
+                    <div class="tilter tilter--3">
+                        <div class="tilter__figure">
+                            <img class="tilter__image" src="{% static 'assets/images/pro-hero-shape-3.png' %}" alt="">
+                            <div class="tilter__caption">
+                                <h1 class="tilter__title"><span>SoCal </span>Sweathearts</h1>
+                                <p class="tilter__description"><b>Bringing you the local girls of Southern California.</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+         <!--   </div> Hero Content End -->
+<!--            -->
+<!--        </div>-->
+<!--    </div>&lt;!&ndash; Hero Section End &ndash;&gt;-->
+
+</div>
+<div class='col-sm-5'>
+
+	<div role="tabpanel">
+
+	  <!-- Nav tabs -->
+	  <ul class="nav nav-tabs nav-tabs-jumbotron" role="tablist">
+	    <li role="presentation" class="active">
+	    	<a href="#register" aria-controls="register" role="tab" data-toggle="tab">Register</a></li>
+	    <li role="presentation">
+	    	<a href="#login" aria-controls="login" role="tab" data-toggle="tab">Login</a></li>
+	  </ul>
+
+	  <!-- Tab panes -->
+	  <div class="tab-content">
+	    <div role="tabpanel" class="tab-pane active" id="register">
+
+	    <div class="panel panel-jumbotron panel-default">
+  <div class="panel-body">
+    <form method='POST' action='{% url "register" %}'>{% csrf_token %}
+					{{ register_form|crispy}}
+					<input class='btn btn-default btn-block btn-lg' type='submit' value='Register'/>
+					</form>
+					<br/>
+					<p>By registering you agree to our <a href='#'>terms</a></p>
+  </div>
+</div>
+					
+
+
+	    </div>
+	    <div role="tabpanel" class="tab-pane" id="login">
+				<div class="panel panel-jumbotron panel-default">
+				<div class="panel-body">
+				<form method='POST' action='{% url "login" %}'>{% csrf_token %}
+				{{ login_form|crispy }}
+				<input class='btn btn-default btn-block' type='submit' value='Login'/>
+				</form>
+
+				</div>
+				</div>
+	    </div>
+	  </div>
+
+	</div>
+
+</div>
+
+</div>
+<!--</div>-->
+
+</div>
+</div>
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="http://note.crohaco.net/wp-content/uploads/2014/09/django-logo-2.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Newest Videos</h2>
+          <p>My newest videos.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="https://www.madison.k12.wi.us/files/Calendar_0.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Webcam</h2>
+          <p>My live webcam.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="http://www.geronimo.fm/wp-content/uploads/2017/09/promo-tiket.jpg" style="width: 300px; height: 200px;">
+          <h2><b>Promotion</b></h2>
+          <p><b>Share my site and get free stuff!!<b></p>
+          <p><a class="btn btn-default" href='{% url "promo" %}' role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-sm-7">
+          <h2 class="featurette-heading">Content created to learn, projects made to work.<br/> <br/> <span class="text-muted">This is the beauty of project-based learning.</span></h2>
+
+        </div>
+        <div class="col-sm-5">
+          {% if featured_categories %}
+					
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					  <!-- Indicators -->
+					  <ol class="carousel-indicators">
+					  {% for cat in featured_categories %}
+					    <li data-target="#carousel-example-generic" data-slide-to="{{ forloop.count }}" class="{% if forloop.first %} active {% endif %}"></li>
+					    {% endfor %}
+					  </ol>
+
+					  <!-- Wrapper for slides -->
+					 
+
+					  <div class="carousel-inner" role="listbox">
+					   {% for cat in featured_categories %}
+					    <div class="item {% if forloop.first %} active {% endif %}">
+					    <a href="{{ cat.get_absolute_url }}">
+					      <img src="{{ cat.get_image_url }}" class='img-responsive'>
+					      </a>
+					      <!-- <div class="carousel-caption">
+					        <a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a>
+					      </div> -->
+					    </div>
+					    {% endfor %}
+					  </div>
+
+					  <!-- Controls -->
+					  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+					    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
+					</div>
+			
+
+
+
+
+
+
+				{% endif %}
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-sm-5">
+         
+				{% if featured_videos %}
+
+
+				<div class="panel panel-default">
+				   <div class="panel-heading">
+			    <h3 class="panel-title">Featured Videos</h3>
+			  </div>
+				    <table class='table'>
+				{% for vid in featured_videos %}
+				<tr><td><a href="{{ vid.get_absolute_url }}">{{ vid.title }}</a> {% if vid.free_preview %}Free Preview{% endif %}</td></tr>
+				{% endfor %}
+				  
+				  </table>
+				</div>
+
+
+
+				{% endif %}
+        </div>
+        <div class="col-sm-7">
+          <h2 class="featurette-heading">Content is updated to meet demands of the srvup project. <span class="text-muted">See for yourself.</span></h2>
+        </div>
+      </div>
+
+      </div>
+
+    
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+

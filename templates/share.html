@@ -1,0 +1,257 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Test</title>
+
+
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="{% static 'css/custom.css' %}" rel="stylesheet" />
+
+</head>
+<body>
+ 
+{% include "navbar.html" %}
+
+	{% if messages %}
+
+	<div class="container">
+	<div class="alert alert-success text-center alert-dismissable">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	{% for message in messages %}
+		<p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p><br />
+		{% endfor %}
+	</div>
+	</div>
+	{% endif %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 pull-right" style="text-align:center;">
+        <i class="fa fa-share-alt fa-5x"></i>
+            <h1>Invite Friends &amp; Earn Rewards</h1>
+            <p>Share your unique link below via Email, Facebook, Twitter, Reddit, or LinkedIn to earn rewards from site.com</p>
+            <div class="well" sytle="background-color:white;">{{ ref_url}}</div>
+            <br/><br/>
+
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ ref_url}}" target="_blank">
+            <i class="fa fa-facebook-square fa-4x" style="color:#3b5998"></i>
+            </a>
+                <a href="https://twitter.com/home?status=This%20is%20my%20testing%20%23tag%20to%20share.%20Tweet%20%40myTwitter.%20http%3A%2F%2Fmysite.com%2F" target="_blank">
+                <i class="fa fa-twitter-square fa-4x" style="color:#4099FF"></i>
+                </a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=false&url={{ ref_url }}&title=This%20is%20the%20title.&summary=This%20is%20the%20summary.&source={{ ref_url }}" target="_blank">
+                    <i class="fa fa-linkedin-square fa-4x" style="color:#007bb6"></i>
+                    </a>
+                        <a href="http://www.reddit.com/submit?url={{ ref_url }}&title=This%20is%20the%20title." target="_blank">
+                        <i class="fa fa-reddit-square fa-4x" style="color:#900020"></i>
+                        </a>
+                            <a href="https://plus.google.com/share?url={{ ref_url }}" target="_blank">
+                            <i class="fa fa-google+-square fa-4x" style="color:#4099FF"></i>
+                            </a>
+            </div>
+        <div class="col-md-6 pull-left">
+            <img src="{% static 'img/chess-queen-200.png' %}" class="img-responsive img-rounded" />
+        </div>
+    </div>
+</div>
+
+<div class="container" style="text-align: center;"><h4><b>
+    Number of Joined: {{ count }}</b></h4><br/>
+
+<div class="row">
+    <div class="col-sm-3">
+    <h3>5 Joined</h3>
+        <div class="progress">
+            <div class="progress-bar" id="count5" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+            0%
+            </div>
+        </div>
+        <h4>Reward Name</h4>
+        <img src="{% static 'img/chess-queen-50.png' %}" />
+        <img src="{% static 'img/chess-queen-50.png' %}" />
+        <hr/>
+        <span style='text-align:left !important;'>
+        <h5>Rewards Include:</h5>
+            <ul>
+                <li>Reward 1</li>
+                <li>Reward 2</li>
+            </ul>
+        </span>
+        <hr/>
+    </div>
+    <div class="col-sm-3">
+    <h3>15 Joined</h3>
+        <div class="progress">
+            <div class="progress-bar" id="count15" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+            0%
+            </div>
+        </div>
+        <h4>Reward Name</h4>
+        <img src="{% static 'img/chess-queen-50.png' %}" />
+        <img src="{% static 'img/chess-queen-50.png' %}" />
+        <hr/>
+        <span style='text-align:left !important;'>
+        <h5>Rewards Include:</h5>
+            <ul>
+                <li>Reward 1</li>
+                <li>Reward 2</li>
+            </ul>
+        </span>
+        <hr/>
+    </div>
+    <div class="col-sm-3">
+    <h3>25 Joined</h3>
+        <div class="progress">
+            <div class="progress-bar" id="count25" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+            0%
+            </div>
+        </div>
+        <h4>Reward Name</h4>
+        <img src="{% static 'img/chess-queen-50.png' %}" />
+        <img src="{% static 'img/chess-queen-50.png' %}" />
+        <hr/>
+        <span style='text-align:left !important;'>
+        <h5>Rewards Include:</h5>
+            <ul>
+                <li>Reward 1</li>
+                <li>Reward 2</li>
+            </ul>
+        </span>
+        <hr/>
+    </div>
+    <div class="col-sm-3">
+    <h3>50 Joined</h3>
+        <div class="progress">
+            <div class="progress-bar" id="count50" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+            0%
+            </div>
+        </div>
+        <h4>Reward Name</h4>
+        <img src="{% static 'img/chess-queen-50.png' %}" />
+        <img src="{% static 'img/chess-queen-50.png' %}" />
+        <hr/>
+        <span style='text-align:left !important;'>
+        <h5>Rewards Include:</h5>
+            <ul>
+                <li>Reward 1</li>
+                <li>Reward 2</li>
+            </ul>
+        </span>
+        <hr/>
+    </div>
+</div>
+
+
+<div class='row featured-row'>      
+    <div class='col-sm-3'>
+        <i class="fa fa-upload fa-3x"></i>
+        <h2>Feature</h2>
+        <p class='lead'>
+        Some feature text goes here.
+        </p>
+    </div>
+    <div class='col-sm-3'>
+        <i class="fa fa-upload fa-3x"></i>
+        <h2>Feature</h2>
+        <p class='lead'>
+        Some feature text goes here.
+        </p>
+    </div>
+    <div class='col-sm-3'>
+        <i class="fa fa-upload fa-3x"></i>
+        <h2>Feature</h2>
+        <p class='lead'>
+        Some feature text goes here.
+        </p>
+    </div>
+    <div class='col-sm-3'>
+        <i class="fa fa-upload fa-3x"></i>
+        <h2>Feature</h2>
+        <p class='lead'>
+        Some feature text goes here.
+        </p>
+    </div>
+</div>
+
+
+
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+	var signUpCount =  {{ count }} ;
+
+	//$(".progress-bar").css("width", "80%").attr("aria-valuenow", "80").text("80%");
+
+	function completeBlock(progressBarId){
+	$(progressBarId).css("width", "100%").attr("aria-valuenow", "100").text("Completed");
+	}
+
+
+	function setNewPerc(progressBarId, percentNum, newText){
+	$(progressBarId).css("width", percentNum + "%").attr("aria-valuenow", percentNum);
+
+	if (percentNum < 50) {
+		//$(progressBarId).text("Your Custom text");
+		$(progressBarId).text(newText);
+	} else {
+		$(progressBarId).text(newText);
+	}
+
+	}
+
+	if (signUpCount == 0){
+
+	} else if (signUpCount > 0 && signUpCount < 5) {
+
+	var newPercent = signUpCount/5 * 100;
+	setNewPerc("#count5", newPercent, "Completed: " + newPercent + "%");
+
+	} else if (signUpCount>=5 && signUpCount < 15) {
+	completeBlock("#count5");
+
+	var newCount = signUpCount - 5;
+	var newPercent = newCount/(15-5) * 100;	
+	setNewPerc("#count15", newPercent, "Completed: " + newPercent + "%");
+
+	} else if (signUpCount >=15 && signUpCount < 25) {
+	completeBlock("#count5");
+	completeBlock("#count15");
+
+	var newCount = signUpCount - 15;
+	var newPercent = newCount/(25-15) * 100;
+	setNewPerc("#count25", newPercent, "Completed: " + newPercent + "%");
+
+	} else if (signUpCount >= 25 && signUpCount < 50 ) {
+	completeBlock("#count5");
+	completeBlock("#count15");
+	completeBlock("#count25");
+
+	var newCount = signUpCount - 25;
+	var newPercent = newCount/(50-25) * 100;
+	setNewPerc("#count50", newPercent, "Completed: " + newPercent + "%");
+
+	} else {
+	completeBlock("#count5");
+	completeBlock("#count15");
+	completeBlock("#count25");
+	completeBlock("#count50");
+	}
+});	
+
+</script>
+
+
+
+
+</body>
+</html>
